@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- IMPORTANT: This is an internal file that has been generated
+     by the Xilinx ISE software.  Any direct editing or
+     changes made to this file may result in unpredictable
+     behavior or data corruption.  It is strongly advised that
+     users do not edit the contents of this file. -->
+<messages>
+<msg type="info" file="ConstraintSystem" num="178" delta="new" ><arg fmt="%s" index="1">TNM</arg> &apos;<arg fmt="%s" index="2">osc_clk_pin</arg>&apos;, used in period specification &apos;<arg fmt="%s" index="3">TS_osc_clk_pin</arg>&apos;, was traced into <arg fmt="%s" index="4">DCM_SP</arg> instance <arg fmt="%s" index="5">inst_Pre_DCM/dcm_sp_inst</arg>. The following new TNM groups and period specifications were generated at the <arg fmt="%s" index="6">DCM_SP</arg> output(s): 
+<arg fmt="%s" index="7">CLK0</arg>: <arg fmt="%s" index="8">&lt;TIMESPEC TS_inst_Pre_DCM_clk0 = PERIOD &quot;inst_Pre_DCM_clk0&quot; TS_osc_clk_pin HIGH 50% INPUT_JITTER 200 ps&gt;</arg>
+</msg>
+
+<msg type="warning" file="NgdBuild" num="443" delta="new" >SFF primitive &apos;<arg fmt="%s" index="1">inst_fir_filter_0/blk00000003/blk00000016</arg>&apos; has unconnected output pin
+</msg>
+
+</messages>
+

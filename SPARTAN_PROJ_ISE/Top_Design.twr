@@ -1,0 +1,666 @@
+--------------------------------------------------------------------------------
+Release 14.7 Trace  (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+
+C:\Xilinx\14.7\ISE_DS\ISE\bin\nt64\unwrapped\trce.exe -intstyle ise -v 3 -s 2
+-n 3 -fastpaths -xml Top_Design.twx Top_Design.ncd -o Top_Design.twr
+Top_Design.pcf -ucf Constraints.ucf
+
+Design file:              Top_Design.ncd
+Physical constraint file: Top_Design.pcf
+Device,package,speed:     xc6slx9,tqg144,C,-2 (PRODUCTION 1.23 2013-10-13)
+Report level:             verbose report
+
+Environment Variable      Effect 
+--------------------      ------ 
+NONE                      No environment variables were set
+--------------------------------------------------------------------------------
+
+INFO:Timing:3412 - To improve timing, see the Timing Closure User Guide (UG612).
+INFO:Timing:2752 - To get complete path coverage, use the unconstrained paths 
+   option. All paths that are not constrained will be reported in the 
+   unconstrained paths section(s) of the report.
+INFO:Timing:3339 - The clock-to-out numbers in this timing report are based on 
+   a 50 Ohm transmission line loading model.  For the details of this model, 
+   and for more information on accounting for different loading conditions, 
+   please see the device datasheet.
+
+================================================================================
+Timing constraint: TS_osc_clk_pin = PERIOD TIMEGRP "osc_clk_pin" 50 MHz HIGH 
+50% INPUT_JITTER 0.2         ns;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 0 paths analyzed, 0 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 component switching limit errors)
+ Minimum period is   8.000ns.
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_osc_clk_pin = PERIOD TIMEGRP "osc_clk_pin" 50 MHz HIGH 50% INPUT_JITTER 0.2
+        ns;
+--------------------------------------------------------------------------------
+Slack: 12.000ns (period - (min low pulse limit / (low pulse / period)))
+  Period: 20.000ns
+  Low pulse: 10.000ns
+  Low pulse limit: 4.000ns (Tdcmpw_CLKIN_50_100)
+  Physical resource: inst_Pre_DCM/dcm_sp_inst/CLKIN
+  Logical resource: inst_Pre_DCM/dcm_sp_inst/CLKIN
+  Location pin: DCM_X0Y1.CLKIN
+  Clock network: inst_Pre_DCM/dcm_sp_inst_ML_NEW_DIVCLK
+--------------------------------------------------------------------------------
+Slack: 12.000ns (period - (min high pulse limit / (high pulse / period)))
+  Period: 20.000ns
+  High pulse: 10.000ns
+  High pulse limit: 4.000ns (Tdcmpw_CLKIN_50_100)
+  Physical resource: inst_Pre_DCM/dcm_sp_inst/CLKIN
+  Logical resource: inst_Pre_DCM/dcm_sp_inst/CLKIN
+  Location pin: DCM_X0Y1.CLKIN
+  Clock network: inst_Pre_DCM/dcm_sp_inst_ML_NEW_DIVCLK
+--------------------------------------------------------------------------------
+Slack: 16.000ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 4.000ns (250.000MHz) (Tdcmper_CLKIN)
+  Physical resource: inst_Pre_DCM/dcm_sp_inst/CLKIN
+  Logical resource: inst_Pre_DCM/dcm_sp_inst/CLKIN
+  Location pin: DCM_X0Y1.CLKIN
+  Clock network: inst_Pre_DCM/dcm_sp_inst_ML_NEW_DIVCLK
+--------------------------------------------------------------------------------
+
+================================================================================
+Timing constraint: TS_inst_Pre_DCM_clk0 = PERIOD TIMEGRP "inst_Pre_DCM_clk0" 
+TS_osc_clk_pin HIGH         50% INPUT_JITTER 0.2 ns;
+For more information, see Period Analysis in the Timing Closure User Guide (UG612).
+
+ 5877 paths analyzed, 1514 endpoints analyzed, 0 failing endpoints
+ 0 timing errors detected. (0 setup errors, 0 hold errors, 0 component switching limit errors)
+ Minimum period is   6.972ns.
+--------------------------------------------------------------------------------
+
+Paths for end point MAF_Acc_22 (SLICE_X10Y31.CIN), 120 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     13.028ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Mmult_back_step[12]_GND_4_o_MuLt_12_OUT (DSP)
+  Destination:          MAF_Acc_22 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.744ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.022ns (0.325 - 0.347)
+  Source Clock:         CLK_50M rising at 0.000ns
+  Destination Clock:    CLK_50M rising at 20.000ns
+  Clock Uncertainty:    0.206ns
+
+  Clock Uncertainty:          0.206ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.200ns
+    Discrete Jitter (DJ):       0.200ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: Mmult_back_step[12]_GND_4_o_MuLt_12_OUT to MAF_Acc_22
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    DSP48_X0Y7.M0        Tdspcko_M_B0REG       4.371   Mmult_back_step[12]_GND_4_o_MuLt_12_OUT
+                                                       Mmult_back_step[12]_GND_4_o_MuLt_12_OUT
+    SLICE_X10Y26.A2      net (fanout=1)        1.203   back_step[12]_GND_4_o_MuLt_12_OUT<0>
+    SLICE_X10Y26.COUT    Topcya                0.472   MAF_Acc<3>
+                                                       Maccum_MAF_Acc_lut<0>
+                                                       Maccum_MAF_Acc_cy<3>
+    SLICE_X10Y27.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<3>
+    SLICE_X10Y27.COUT    Tbyp                  0.091   MAF_Acc<7>
+                                                       Maccum_MAF_Acc_cy<7>
+    SLICE_X10Y28.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<7>
+    SLICE_X10Y28.COUT    Tbyp                  0.091   MAF_Acc<11>
+                                                       Maccum_MAF_Acc_cy<11>
+    SLICE_X10Y29.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<11>
+    SLICE_X10Y29.COUT    Tbyp                  0.091   MAF_Acc<15>
+                                                       Maccum_MAF_Acc_cy<15>
+    SLICE_X10Y30.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<15>
+    SLICE_X10Y30.COUT    Tbyp                  0.091   MAF_Acc<19>
+                                                       Maccum_MAF_Acc_cy<19>
+    SLICE_X10Y31.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<19>
+    SLICE_X10Y31.CLK     Tcinck                0.319   MAF_Acc<23>
+                                                       Maccum_MAF_Acc_xor<23>
+                                                       MAF_Acc_22
+    -------------------------------------------------  ---------------------------
+    Total                                      6.744ns (5.526ns logic, 1.218ns route)
+                                                       (81.9% logic, 18.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     13.207ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Mmult_back_step[12]_GND_4_o_MuLt_12_OUT (DSP)
+  Destination:          MAF_Acc_22 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.565ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.022ns (0.325 - 0.347)
+  Source Clock:         CLK_50M rising at 0.000ns
+  Destination Clock:    CLK_50M rising at 20.000ns
+  Clock Uncertainty:    0.206ns
+
+  Clock Uncertainty:          0.206ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.200ns
+    Discrete Jitter (DJ):       0.200ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: Mmult_back_step[12]_GND_4_o_MuLt_12_OUT to MAF_Acc_22
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    DSP48_X0Y7.M3        Tdspcko_M_B0REG       4.371   Mmult_back_step[12]_GND_4_o_MuLt_12_OUT
+                                                       Mmult_back_step[12]_GND_4_o_MuLt_12_OUT
+    SLICE_X10Y26.D3      net (fanout=1)        1.206   back_step[12]_GND_4_o_MuLt_12_OUT<3>
+    SLICE_X10Y26.COUT    Topcyd                0.290   MAF_Acc<3>
+                                                       Maccum_MAF_Acc_lut<3>
+                                                       Maccum_MAF_Acc_cy<3>
+    SLICE_X10Y27.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<3>
+    SLICE_X10Y27.COUT    Tbyp                  0.091   MAF_Acc<7>
+                                                       Maccum_MAF_Acc_cy<7>
+    SLICE_X10Y28.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<7>
+    SLICE_X10Y28.COUT    Tbyp                  0.091   MAF_Acc<11>
+                                                       Maccum_MAF_Acc_cy<11>
+    SLICE_X10Y29.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<11>
+    SLICE_X10Y29.COUT    Tbyp                  0.091   MAF_Acc<15>
+                                                       Maccum_MAF_Acc_cy<15>
+    SLICE_X10Y30.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<15>
+    SLICE_X10Y30.COUT    Tbyp                  0.091   MAF_Acc<19>
+                                                       Maccum_MAF_Acc_cy<19>
+    SLICE_X10Y31.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<19>
+    SLICE_X10Y31.CLK     Tcinck                0.319   MAF_Acc<23>
+                                                       Maccum_MAF_Acc_xor<23>
+                                                       MAF_Acc_22
+    -------------------------------------------------  ---------------------------
+    Total                                      6.565ns (5.344ns logic, 1.221ns route)
+                                                       (81.4% logic, 18.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     13.268ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Mmult_back_step[12]_GND_4_o_MuLt_12_OUT (DSP)
+  Destination:          MAF_Acc_22 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.504ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.022ns (0.325 - 0.347)
+  Source Clock:         CLK_50M rising at 0.000ns
+  Destination Clock:    CLK_50M rising at 20.000ns
+  Clock Uncertainty:    0.206ns
+
+  Clock Uncertainty:          0.206ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.200ns
+    Discrete Jitter (DJ):       0.200ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: Mmult_back_step[12]_GND_4_o_MuLt_12_OUT to MAF_Acc_22
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    DSP48_X0Y7.M5        Tdspcko_M_B0REG       4.371   Mmult_back_step[12]_GND_4_o_MuLt_12_OUT
+                                                       Mmult_back_step[12]_GND_4_o_MuLt_12_OUT
+    SLICE_X10Y27.B3      net (fanout=1)        1.081   back_step[12]_GND_4_o_MuLt_12_OUT<5>
+    SLICE_X10Y27.COUT    Topcyb                0.448   MAF_Acc<7>
+                                                       Maccum_MAF_Acc_lut<5>
+                                                       Maccum_MAF_Acc_cy<7>
+    SLICE_X10Y28.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<7>
+    SLICE_X10Y28.COUT    Tbyp                  0.091   MAF_Acc<11>
+                                                       Maccum_MAF_Acc_cy<11>
+    SLICE_X10Y29.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<11>
+    SLICE_X10Y29.COUT    Tbyp                  0.091   MAF_Acc<15>
+                                                       Maccum_MAF_Acc_cy<15>
+    SLICE_X10Y30.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<15>
+    SLICE_X10Y30.COUT    Tbyp                  0.091   MAF_Acc<19>
+                                                       Maccum_MAF_Acc_cy<19>
+    SLICE_X10Y31.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<19>
+    SLICE_X10Y31.CLK     Tcinck                0.319   MAF_Acc<23>
+                                                       Maccum_MAF_Acc_xor<23>
+                                                       MAF_Acc_22
+    -------------------------------------------------  ---------------------------
+    Total                                      6.504ns (5.411ns logic, 1.093ns route)
+                                                       (83.2% logic, 16.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point MAF_Acc_23 (SLICE_X10Y31.CIN), 120 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     13.028ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Mmult_back_step[12]_GND_4_o_MuLt_12_OUT (DSP)
+  Destination:          MAF_Acc_23 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.744ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.022ns (0.325 - 0.347)
+  Source Clock:         CLK_50M rising at 0.000ns
+  Destination Clock:    CLK_50M rising at 20.000ns
+  Clock Uncertainty:    0.206ns
+
+  Clock Uncertainty:          0.206ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.200ns
+    Discrete Jitter (DJ):       0.200ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: Mmult_back_step[12]_GND_4_o_MuLt_12_OUT to MAF_Acc_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    DSP48_X0Y7.M0        Tdspcko_M_B0REG       4.371   Mmult_back_step[12]_GND_4_o_MuLt_12_OUT
+                                                       Mmult_back_step[12]_GND_4_o_MuLt_12_OUT
+    SLICE_X10Y26.A2      net (fanout=1)        1.203   back_step[12]_GND_4_o_MuLt_12_OUT<0>
+    SLICE_X10Y26.COUT    Topcya                0.472   MAF_Acc<3>
+                                                       Maccum_MAF_Acc_lut<0>
+                                                       Maccum_MAF_Acc_cy<3>
+    SLICE_X10Y27.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<3>
+    SLICE_X10Y27.COUT    Tbyp                  0.091   MAF_Acc<7>
+                                                       Maccum_MAF_Acc_cy<7>
+    SLICE_X10Y28.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<7>
+    SLICE_X10Y28.COUT    Tbyp                  0.091   MAF_Acc<11>
+                                                       Maccum_MAF_Acc_cy<11>
+    SLICE_X10Y29.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<11>
+    SLICE_X10Y29.COUT    Tbyp                  0.091   MAF_Acc<15>
+                                                       Maccum_MAF_Acc_cy<15>
+    SLICE_X10Y30.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<15>
+    SLICE_X10Y30.COUT    Tbyp                  0.091   MAF_Acc<19>
+                                                       Maccum_MAF_Acc_cy<19>
+    SLICE_X10Y31.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<19>
+    SLICE_X10Y31.CLK     Tcinck                0.319   MAF_Acc<23>
+                                                       Maccum_MAF_Acc_xor<23>
+                                                       MAF_Acc_23
+    -------------------------------------------------  ---------------------------
+    Total                                      6.744ns (5.526ns logic, 1.218ns route)
+                                                       (81.9% logic, 18.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     13.207ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Mmult_back_step[12]_GND_4_o_MuLt_12_OUT (DSP)
+  Destination:          MAF_Acc_23 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.565ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.022ns (0.325 - 0.347)
+  Source Clock:         CLK_50M rising at 0.000ns
+  Destination Clock:    CLK_50M rising at 20.000ns
+  Clock Uncertainty:    0.206ns
+
+  Clock Uncertainty:          0.206ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.200ns
+    Discrete Jitter (DJ):       0.200ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: Mmult_back_step[12]_GND_4_o_MuLt_12_OUT to MAF_Acc_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    DSP48_X0Y7.M3        Tdspcko_M_B0REG       4.371   Mmult_back_step[12]_GND_4_o_MuLt_12_OUT
+                                                       Mmult_back_step[12]_GND_4_o_MuLt_12_OUT
+    SLICE_X10Y26.D3      net (fanout=1)        1.206   back_step[12]_GND_4_o_MuLt_12_OUT<3>
+    SLICE_X10Y26.COUT    Topcyd                0.290   MAF_Acc<3>
+                                                       Maccum_MAF_Acc_lut<3>
+                                                       Maccum_MAF_Acc_cy<3>
+    SLICE_X10Y27.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<3>
+    SLICE_X10Y27.COUT    Tbyp                  0.091   MAF_Acc<7>
+                                                       Maccum_MAF_Acc_cy<7>
+    SLICE_X10Y28.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<7>
+    SLICE_X10Y28.COUT    Tbyp                  0.091   MAF_Acc<11>
+                                                       Maccum_MAF_Acc_cy<11>
+    SLICE_X10Y29.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<11>
+    SLICE_X10Y29.COUT    Tbyp                  0.091   MAF_Acc<15>
+                                                       Maccum_MAF_Acc_cy<15>
+    SLICE_X10Y30.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<15>
+    SLICE_X10Y30.COUT    Tbyp                  0.091   MAF_Acc<19>
+                                                       Maccum_MAF_Acc_cy<19>
+    SLICE_X10Y31.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<19>
+    SLICE_X10Y31.CLK     Tcinck                0.319   MAF_Acc<23>
+                                                       Maccum_MAF_Acc_xor<23>
+                                                       MAF_Acc_23
+    -------------------------------------------------  ---------------------------
+    Total                                      6.565ns (5.344ns logic, 1.221ns route)
+                                                       (81.4% logic, 18.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     13.268ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Mmult_back_step[12]_GND_4_o_MuLt_12_OUT (DSP)
+  Destination:          MAF_Acc_23 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.504ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.022ns (0.325 - 0.347)
+  Source Clock:         CLK_50M rising at 0.000ns
+  Destination Clock:    CLK_50M rising at 20.000ns
+  Clock Uncertainty:    0.206ns
+
+  Clock Uncertainty:          0.206ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.200ns
+    Discrete Jitter (DJ):       0.200ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: Mmult_back_step[12]_GND_4_o_MuLt_12_OUT to MAF_Acc_23
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    DSP48_X0Y7.M5        Tdspcko_M_B0REG       4.371   Mmult_back_step[12]_GND_4_o_MuLt_12_OUT
+                                                       Mmult_back_step[12]_GND_4_o_MuLt_12_OUT
+    SLICE_X10Y27.B3      net (fanout=1)        1.081   back_step[12]_GND_4_o_MuLt_12_OUT<5>
+    SLICE_X10Y27.COUT    Topcyb                0.448   MAF_Acc<7>
+                                                       Maccum_MAF_Acc_lut<5>
+                                                       Maccum_MAF_Acc_cy<7>
+    SLICE_X10Y28.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<7>
+    SLICE_X10Y28.COUT    Tbyp                  0.091   MAF_Acc<11>
+                                                       Maccum_MAF_Acc_cy<11>
+    SLICE_X10Y29.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<11>
+    SLICE_X10Y29.COUT    Tbyp                  0.091   MAF_Acc<15>
+                                                       Maccum_MAF_Acc_cy<15>
+    SLICE_X10Y30.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<15>
+    SLICE_X10Y30.COUT    Tbyp                  0.091   MAF_Acc<19>
+                                                       Maccum_MAF_Acc_cy<19>
+    SLICE_X10Y31.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<19>
+    SLICE_X10Y31.CLK     Tcinck                0.319   MAF_Acc<23>
+                                                       Maccum_MAF_Acc_xor<23>
+                                                       MAF_Acc_23
+    -------------------------------------------------  ---------------------------
+    Total                                      6.504ns (5.411ns logic, 1.093ns route)
+                                                       (83.2% logic, 16.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point MAF_Acc_21 (SLICE_X10Y31.CIN), 120 paths
+--------------------------------------------------------------------------------
+Slack (setup path):     13.040ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Mmult_back_step[12]_GND_4_o_MuLt_12_OUT (DSP)
+  Destination:          MAF_Acc_21 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.732ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.022ns (0.325 - 0.347)
+  Source Clock:         CLK_50M rising at 0.000ns
+  Destination Clock:    CLK_50M rising at 20.000ns
+  Clock Uncertainty:    0.206ns
+
+  Clock Uncertainty:          0.206ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.200ns
+    Discrete Jitter (DJ):       0.200ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: Mmult_back_step[12]_GND_4_o_MuLt_12_OUT to MAF_Acc_21
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    DSP48_X0Y7.M0        Tdspcko_M_B0REG       4.371   Mmult_back_step[12]_GND_4_o_MuLt_12_OUT
+                                                       Mmult_back_step[12]_GND_4_o_MuLt_12_OUT
+    SLICE_X10Y26.A2      net (fanout=1)        1.203   back_step[12]_GND_4_o_MuLt_12_OUT<0>
+    SLICE_X10Y26.COUT    Topcya                0.472   MAF_Acc<3>
+                                                       Maccum_MAF_Acc_lut<0>
+                                                       Maccum_MAF_Acc_cy<3>
+    SLICE_X10Y27.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<3>
+    SLICE_X10Y27.COUT    Tbyp                  0.091   MAF_Acc<7>
+                                                       Maccum_MAF_Acc_cy<7>
+    SLICE_X10Y28.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<7>
+    SLICE_X10Y28.COUT    Tbyp                  0.091   MAF_Acc<11>
+                                                       Maccum_MAF_Acc_cy<11>
+    SLICE_X10Y29.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<11>
+    SLICE_X10Y29.COUT    Tbyp                  0.091   MAF_Acc<15>
+                                                       Maccum_MAF_Acc_cy<15>
+    SLICE_X10Y30.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<15>
+    SLICE_X10Y30.COUT    Tbyp                  0.091   MAF_Acc<19>
+                                                       Maccum_MAF_Acc_cy<19>
+    SLICE_X10Y31.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<19>
+    SLICE_X10Y31.CLK     Tcinck                0.307   MAF_Acc<23>
+                                                       Maccum_MAF_Acc_xor<23>
+                                                       MAF_Acc_21
+    -------------------------------------------------  ---------------------------
+    Total                                      6.732ns (5.514ns logic, 1.218ns route)
+                                                       (81.9% logic, 18.1% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     13.219ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Mmult_back_step[12]_GND_4_o_MuLt_12_OUT (DSP)
+  Destination:          MAF_Acc_21 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.553ns (Levels of Logic = 6)
+  Clock Path Skew:      -0.022ns (0.325 - 0.347)
+  Source Clock:         CLK_50M rising at 0.000ns
+  Destination Clock:    CLK_50M rising at 20.000ns
+  Clock Uncertainty:    0.206ns
+
+  Clock Uncertainty:          0.206ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.200ns
+    Discrete Jitter (DJ):       0.200ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: Mmult_back_step[12]_GND_4_o_MuLt_12_OUT to MAF_Acc_21
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    DSP48_X0Y7.M3        Tdspcko_M_B0REG       4.371   Mmult_back_step[12]_GND_4_o_MuLt_12_OUT
+                                                       Mmult_back_step[12]_GND_4_o_MuLt_12_OUT
+    SLICE_X10Y26.D3      net (fanout=1)        1.206   back_step[12]_GND_4_o_MuLt_12_OUT<3>
+    SLICE_X10Y26.COUT    Topcyd                0.290   MAF_Acc<3>
+                                                       Maccum_MAF_Acc_lut<3>
+                                                       Maccum_MAF_Acc_cy<3>
+    SLICE_X10Y27.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<3>
+    SLICE_X10Y27.COUT    Tbyp                  0.091   MAF_Acc<7>
+                                                       Maccum_MAF_Acc_cy<7>
+    SLICE_X10Y28.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<7>
+    SLICE_X10Y28.COUT    Tbyp                  0.091   MAF_Acc<11>
+                                                       Maccum_MAF_Acc_cy<11>
+    SLICE_X10Y29.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<11>
+    SLICE_X10Y29.COUT    Tbyp                  0.091   MAF_Acc<15>
+                                                       Maccum_MAF_Acc_cy<15>
+    SLICE_X10Y30.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<15>
+    SLICE_X10Y30.COUT    Tbyp                  0.091   MAF_Acc<19>
+                                                       Maccum_MAF_Acc_cy<19>
+    SLICE_X10Y31.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<19>
+    SLICE_X10Y31.CLK     Tcinck                0.307   MAF_Acc<23>
+                                                       Maccum_MAF_Acc_xor<23>
+                                                       MAF_Acc_21
+    -------------------------------------------------  ---------------------------
+    Total                                      6.553ns (5.332ns logic, 1.221ns route)
+                                                       (81.4% logic, 18.6% route)
+
+--------------------------------------------------------------------------------
+Slack (setup path):     13.280ns (requirement - (data path - clock path skew + uncertainty))
+  Source:               Mmult_back_step[12]_GND_4_o_MuLt_12_OUT (DSP)
+  Destination:          MAF_Acc_21 (FF)
+  Requirement:          20.000ns
+  Data Path Delay:      6.492ns (Levels of Logic = 5)
+  Clock Path Skew:      -0.022ns (0.325 - 0.347)
+  Source Clock:         CLK_50M rising at 0.000ns
+  Destination Clock:    CLK_50M rising at 20.000ns
+  Clock Uncertainty:    0.206ns
+
+  Clock Uncertainty:          0.206ns  ((TSJ^2 + TIJ^2)^1/2 + DJ) / 2 + PE
+    Total System Jitter (TSJ):  0.070ns
+    Total Input Jitter (TIJ):   0.200ns
+    Discrete Jitter (DJ):       0.200ns
+    Phase Error (PE):           0.000ns
+
+  Maximum Data Path at Slow Process Corner: Mmult_back_step[12]_GND_4_o_MuLt_12_OUT to MAF_Acc_21
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    DSP48_X0Y7.M5        Tdspcko_M_B0REG       4.371   Mmult_back_step[12]_GND_4_o_MuLt_12_OUT
+                                                       Mmult_back_step[12]_GND_4_o_MuLt_12_OUT
+    SLICE_X10Y27.B3      net (fanout=1)        1.081   back_step[12]_GND_4_o_MuLt_12_OUT<5>
+    SLICE_X10Y27.COUT    Topcyb                0.448   MAF_Acc<7>
+                                                       Maccum_MAF_Acc_lut<5>
+                                                       Maccum_MAF_Acc_cy<7>
+    SLICE_X10Y28.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<7>
+    SLICE_X10Y28.COUT    Tbyp                  0.091   MAF_Acc<11>
+                                                       Maccum_MAF_Acc_cy<11>
+    SLICE_X10Y29.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<11>
+    SLICE_X10Y29.COUT    Tbyp                  0.091   MAF_Acc<15>
+                                                       Maccum_MAF_Acc_cy<15>
+    SLICE_X10Y30.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<15>
+    SLICE_X10Y30.COUT    Tbyp                  0.091   MAF_Acc<19>
+                                                       Maccum_MAF_Acc_cy<19>
+    SLICE_X10Y31.CIN     net (fanout=1)        0.003   Maccum_MAF_Acc_cy<19>
+    SLICE_X10Y31.CLK     Tcinck                0.307   MAF_Acc<23>
+                                                       Maccum_MAF_Acc_xor<23>
+                                                       MAF_Acc_21
+    -------------------------------------------------  ---------------------------
+    Total                                      6.492ns (5.399ns logic, 1.093ns route)
+                                                       (83.2% logic, 16.8% route)
+
+--------------------------------------------------------------------------------
+
+Hold Paths: TS_inst_Pre_DCM_clk0 = PERIOD TIMEGRP "inst_Pre_DCM_clk0" TS_osc_clk_pin HIGH
+        50% INPUT_JITTER 0.2 ns;
+--------------------------------------------------------------------------------
+
+Paths for end point inst_fir_filter_0/blk00000003/blk00000009 (DSP48_X0Y3.A5), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.325ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               inst_fir_filter_0/blk00000003/blk0000008b/blk00000090 (FF)
+  Destination:          inst_fir_filter_0/blk00000003/blk00000009 (DSP)
+  Requirement:          0.000ns
+  Data Path Delay:      0.334ns (Levels of Logic = 0)
+  Clock Path Skew:      0.009ns (0.112 - 0.103)
+  Source Clock:         CLK_50M rising at 20.000ns
+  Destination Clock:    CLK_50M rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: inst_fir_filter_0/blk00000003/blk0000008b/blk00000090 to inst_fir_filter_0/blk00000003/blk00000009
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y14.BQ       Tcko                  0.198   inst_fir_filter_0/blk00000003/sig00000068
+                                                       inst_fir_filter_0/blk00000003/blk0000008b/blk00000090
+    DSP48_X0Y3.A5        net (fanout=1)        0.173   inst_fir_filter_0/blk00000003/sig00000064
+    DSP48_X0Y3.CLK       Tdspckd_A_A1REG(-Th)     0.037   inst_fir_filter_0/blk00000003/blk00000009
+                                                       inst_fir_filter_0/blk00000003/blk00000009
+    -------------------------------------------------  ---------------------------
+    Total                                      0.334ns (0.161ns logic, 0.173ns route)
+                                                       (48.2% logic, 51.8% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point inst_fir_filter_0/blk00000003/blk00000009 (DSP48_X0Y3.A2), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.329ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               inst_fir_filter_0/blk00000003/blk0000008b/blk0000008e (FF)
+  Destination:          inst_fir_filter_0/blk00000003/blk00000009 (DSP)
+  Requirement:          0.000ns
+  Data Path Delay:      0.338ns (Levels of Logic = 0)
+  Clock Path Skew:      0.009ns (0.112 - 0.103)
+  Source Clock:         CLK_50M rising at 20.000ns
+  Destination Clock:    CLK_50M rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: inst_fir_filter_0/blk00000003/blk0000008b/blk0000008e to inst_fir_filter_0/blk00000003/blk00000009
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y14.CQ       Tcko                  0.198   inst_fir_filter_0/blk00000003/sig00000068
+                                                       inst_fir_filter_0/blk00000003/blk0000008b/blk0000008e
+    DSP48_X0Y3.A2        net (fanout=2)        0.177   inst_fir_filter_0/blk00000003/sig00000066
+    DSP48_X0Y3.CLK       Tdspckd_A_A1REG(-Th)     0.037   inst_fir_filter_0/blk00000003/blk00000009
+                                                       inst_fir_filter_0/blk00000003/blk00000009
+    -------------------------------------------------  ---------------------------
+    Total                                      0.338ns (0.161ns logic, 0.177ns route)
+                                                       (47.6% logic, 52.4% route)
+
+--------------------------------------------------------------------------------
+
+Paths for end point inst_fir_filter_0/blk00000003/blk00000009 (DSP48_X0Y3.A3), 1 path
+--------------------------------------------------------------------------------
+Slack (hold path):      0.329ns (requirement - (clock path skew + uncertainty - data path))
+  Source:               inst_fir_filter_0/blk00000003/blk0000008b/blk0000008e (FF)
+  Destination:          inst_fir_filter_0/blk00000003/blk00000009 (DSP)
+  Requirement:          0.000ns
+  Data Path Delay:      0.338ns (Levels of Logic = 0)
+  Clock Path Skew:      0.009ns (0.112 - 0.103)
+  Source Clock:         CLK_50M rising at 20.000ns
+  Destination Clock:    CLK_50M rising at 20.000ns
+  Clock Uncertainty:    0.000ns
+
+  Minimum Data Path at Fast Process Corner: inst_fir_filter_0/blk00000003/blk0000008b/blk0000008e to inst_fir_filter_0/blk00000003/blk00000009
+    Location             Delay type         Delay(ns)  Physical Resource
+                                                       Logical Resource(s)
+    -------------------------------------------------  -------------------
+    SLICE_X9Y14.CQ       Tcko                  0.198   inst_fir_filter_0/blk00000003/sig00000068
+                                                       inst_fir_filter_0/blk00000003/blk0000008b/blk0000008e
+    DSP48_X0Y3.A3        net (fanout=2)        0.177   inst_fir_filter_0/blk00000003/sig00000066
+    DSP48_X0Y3.CLK       Tdspckd_A_A1REG(-Th)     0.037   inst_fir_filter_0/blk00000003/blk00000009
+                                                       inst_fir_filter_0/blk00000003/blk00000009
+    -------------------------------------------------  ---------------------------
+    Total                                      0.338ns (0.161ns logic, 0.177ns route)
+                                                       (47.6% logic, 52.4% route)
+
+--------------------------------------------------------------------------------
+
+Component Switching Limit Checks: TS_inst_Pre_DCM_clk0 = PERIOD TIMEGRP "inst_Pre_DCM_clk0" TS_osc_clk_pin HIGH
+        50% INPUT_JITTER 0.2 ns;
+--------------------------------------------------------------------------------
+Slack: 16.430ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKA(Fmax))
+  Physical resource: inst_RAM_block1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram/CLKA
+  Logical resource: inst_RAM_block1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram/CLKA
+  Location pin: RAMB16_X1Y10.CLKA
+  Clock network: CLK_50M
+--------------------------------------------------------------------------------
+Slack: 16.430ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 3.570ns (280.112MHz) (Trper_CLKB(Fmax))
+  Physical resource: inst_RAM_block1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram/CLKB
+  Logical resource: inst_RAM_block1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram/CLKB
+  Location pin: RAMB16_X1Y10.CLKB
+  Clock network: CLK_50M
+--------------------------------------------------------------------------------
+Slack: 16.997ns (period - min period limit)
+  Period: 20.000ns
+  Min period limit: 3.003ns (333.000MHz) (Tdspper_AREG_MREG)
+  Physical resource: inst_fir_filter_0/blk00000003/blk00000009/CLK
+  Logical resource: inst_fir_filter_0/blk00000003/blk00000009/CLK
+  Location pin: DSP48_X0Y3.CLK
+  Clock network: CLK_50M
+--------------------------------------------------------------------------------
+
+
+Derived Constraint Report
+Derived Constraints for TS_osc_clk_pin
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|                               |   Period    |       Actual Period       |      Timing Errors        |      Paths Analyzed       |
+|           Constraint          | Requirement |-------------+-------------|-------------+-------------|-------------+-------------|
+|                               |             |   Direct    | Derivative  |   Direct    | Derivative  |   Direct    | Derivative  |
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+|TS_osc_clk_pin                 |     20.000ns|      8.000ns|      6.972ns|            0|            0|            0|         5877|
+| TS_inst_Pre_DCM_clk0          |     20.000ns|      6.972ns|          N/A|            0|            0|         5877|            0|
++-------------------------------+-------------+-------------+-------------+-------------+-------------+-------------+-------------+
+
+All constraints were met.
+
+
+Data Sheet report:
+-----------------
+All values displayed in nanoseconds (ns)
+
+Clock to Setup on destination clock CLK_IN
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK_IN         |    6.972|         |         |         |
+---------------+---------+---------+---------+---------+
+
+
+Timing summary:
+---------------
+
+Timing errors: 0  Score: 0  (Setup/Max: 0, Hold: 0)
+
+Constraints cover 5877 paths, 0 nets, and 969 connections
+
+Design statistics:
+   Minimum period:   8.000ns{1}   (Maximum frequency: 125.000MHz)
+
+
+------------------------------------Footnotes-----------------------------------
+1)  The minimum period statistic assumes all single cycle delays.
+
+Analysis completed Wed Apr 28 05:57:47 2021 
+--------------------------------------------------------------------------------
+
+Trace Settings:
+-------------------------
+Trace Settings 
+
+Peak Memory Usage: 4667 MB
+
+
+

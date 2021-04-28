@@ -1,0 +1,285 @@
+//! **************************************************************************
+// Written by: Map P.20131013 on Wed Apr 28 05:56:57 2021
+//! **************************************************************************
+
+SCHEMATIC START;
+COMP "In_sig_pin" LOCATE = SITE "P124" LEVEL 1;
+COMP "CLK_IN" LOCATE = SITE "P24" LEVEL 1;
+COMP "ESP32_Data<0>" LOCATE = SITE "P88" LEVEL 1;
+COMP "ESP32_Data<1>" LOCATE = SITE "P87" LEVEL 1;
+COMP "ESP32_Data<2>" LOCATE = SITE "P78" LEVEL 1;
+COMP "ESP32_Data<3>" LOCATE = SITE "P79" LEVEL 1;
+COMP "ESP32_Data<4>" LOCATE = SITE "P80" LEVEL 1;
+COMP "ESP32_Data<5>" LOCATE = SITE "P81" LEVEL 1;
+COMP "ESP32_Data<6>" LOCATE = SITE "P85" LEVEL 1;
+COMP "ESP32_Data<7>" LOCATE = SITE "P82" LEVEL 1;
+COMP "ESP32_clk" LOCATE = SITE "P75" LEVEL 1;
+COMP "ESP32_Ready" LOCATE = SITE "P74" LEVEL 1;
+PIN Mmult_back_step[12]_GND_4_o_MuLt_12_OUT_pins<92> = BEL
+        "Mmult_back_step[12]_GND_4_o_MuLt_12_OUT" PINNAME CLK;
+PIN inst_fir_filter_0/blk00000003/blk00000009_pins<92> = BEL
+        "inst_fir_filter_0/blk00000003/blk00000009" PINNAME CLK;
+PIN
+        inst_RAM_block1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram_pins<28>
+        = BEL
+        "inst_RAM_block1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram"
+        PINNAME CLKA;
+PIN
+        inst_RAM_block1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram_pins<29>
+        = BEL
+        "inst_RAM_block1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram"
+        PINNAME CLKB;
+PIN SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_1_pins<1> = BEL
+        "SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_1" PINNAME O;
+PIN inst_Pre_DCM/dcm_sp_inst_pins<1> = BEL "inst_Pre_DCM/dcm_sp_inst" PINNAME
+        CLKFB;
+TIMEGRP inst_Pre_DCM_clk0 = BEL "esp_rdy_cur" BEL "esp_clk_cur" BEL
+        "Input_signal_regd" BEL "esp_rdy_pre" BEL "esp_clk_pre" BEL
+        "sample_cntr_0" BEL "sample_cntr_1" BEL "sample_cntr_2" BEL
+        "sample_cntr_3" BEL "sample_cntr_4" BEL "sample_cntr_5" BEL
+        "sample_cntr_6" BEL "sample_cntr_7" BEL "sample_cntr_8" BEL
+        "sample_cntr_9" BEL "back_value_inst_0" BEL "back_value_inst_1" BEL
+        "back_value_inst_2" BEL "back_value_inst_3" BEL "back_value_inst_4"
+        BEL "back_value_inst_5" BEL "back_value_inst_6" BEL
+        "back_value_inst_7" BEL "back_value_inst_8" BEL "back_value_inst_9"
+        BEL "back_value_inst_10" BEL "back_value_inst_11" BEL
+        "back_value_inst_12" BEL "RAM1_WAddr_0" BEL "RAM1_WAddr_1" BEL
+        "RAM1_WAddr_2" BEL "RAM1_WAddr_3" BEL "RAM1_WAddr_4" BEL
+        "RAM1_WAddr_5" BEL "RAM1_WAddr_6" BEL "RAM1_WAddr_7" BEL
+        "RAM1_WAddr_8" BEL "RAM1_WAddr_9" BEL "FIR0_din_0" BEL "FIR0_din_1"
+        BEL "FIR0_din_2" BEL "FIR0_din_3" BEL "FIR0_din_4" BEL "FIR0_din_5"
+        BEL "FIR0_din_6" BEL "FIR0_din_7" BEL "FIR0_din_8" BEL "FIR0_din_9"
+        BEL "FIR0_din_10" BEL "FIR0_din_11" BEL "FIR0_din_12" BEL
+        "FIR0_din_13" BEL "FIR0_din_14" BEL "FIR0_din_15" BEL "RAM1_WData_0"
+        BEL "RAM1_WData_1" BEL "RAM1_WData_2" BEL "RAM1_WData_3" BEL
+        "RAM1_WData_4" BEL "RAM1_WData_5" BEL "RAM1_WData_6" BEL
+        "RAM1_WData_7" BEL "RAM1_WData_8" BEL "RAM1_WData_9" BEL
+        "ESP_Data_out_0" BEL "ESP_Data_out_1" BEL "ESP_Data_out_2" BEL
+        "ESP_Data_out_3" BEL "ESP_Data_out_4" BEL "ESP_Data_out_5" BEL
+        "ESP_Data_out_6" BEL "ESP_Data_out_7" PIN
+        "Mmult_back_step[12]_GND_4_o_MuLt_12_OUT_pins<92>" BEL
+        "In_sig_integral_0" BEL "In_sig_integral_1" BEL "In_sig_integral_2"
+        BEL "In_sig_integral_3" BEL "In_sig_integral_4" BEL
+        "In_sig_integral_5" BEL "In_sig_integral_6" BEL "In_sig_integral_7"
+        BEL "In_sig_integral_8" BEL "In_sig_integral_9" BEL
+        "In_sig_integral_10" BEL "In_sig_integral_11" BEL "In_sig_integral_12"
+        BEL "In_sig_integral_13" BEL "In_sig_integral_14" BEL
+        "In_sig_integral_15" BEL "In_sig_integral_16" BEL "Timer_cntr_0" BEL
+        "Timer_cntr_1" BEL "Timer_cntr_2" BEL "Timer_cntr_3" BEL
+        "Timer_cntr_4" BEL "Timer_cntr_5" BEL "Timer_cntr_6" BEL
+        "Timer_cntr_7" BEL "Timer_cntr_8" BEL "Timer_cntr_9" BEL
+        "Timer_cntr_10" BEL "Timer_cntr_11" BEL "Timer_cntr_12" BEL
+        "Timer_cntr_13" BEL "Timer_cntr_14" BEL "Timer_cntr_15" BEL
+        "Timer_cntr_16" BEL "Timer_cntr_17" BEL "Timer_cntr_18" BEL
+        "MAF_Back_0" BEL "MAF_Back_1" BEL "MAF_Back_2" BEL "MAF_Back_3" BEL
+        "MAF_Back_4" BEL "MAF_Back_5" BEL "MAF_Back_6" BEL "MAF_Back_7" BEL
+        "MAF_Back_8" BEL "MAF_Back_9" BEL "MAF_Back_10" BEL "MAF_Back_11" BEL
+        "MAF_Back_12" BEL "MAF_Back_13" BEL "MAF_Back_14" BEL "MAF_Back_15"
+        BEL "MAF_Back_16" BEL "MAF_Back_17" BEL "MAF_Back_18" BEL
+        "MAF_Back_19" BEL "MAF_Back_20" BEL "MAF_Back_21" BEL "MAF_Back_22"
+        BEL "RAM1_RAddr_0" BEL "RAM1_RAddr_1" BEL "RAM1_RAddr_2" BEL
+        "RAM1_RAddr_3" BEL "RAM1_RAddr_4" BEL "RAM1_RAddr_5" BEL
+        "RAM1_RAddr_6" BEL "RAM1_RAddr_7" BEL "RAM1_RAddr_8" BEL
+        "RAM1_RAddr_9" BEL "MAF_Acc_0" BEL "MAF_Acc_1" BEL "MAF_Acc_2" BEL
+        "MAF_Acc_3" BEL "MAF_Acc_4" BEL "MAF_Acc_5" BEL "MAF_Acc_6" BEL
+        "MAF_Acc_7" BEL "MAF_Acc_8" BEL "MAF_Acc_9" BEL "MAF_Acc_10" BEL
+        "MAF_Acc_11" BEL "MAF_Acc_12" BEL "MAF_Acc_13" BEL "MAF_Acc_14" BEL
+        "MAF_Acc_15" BEL "MAF_Acc_16" BEL "MAF_Acc_17" BEL "MAF_Acc_18" BEL
+        "MAF_Acc_19" BEL "MAF_Acc_20" BEL "MAF_Acc_21" BEL "MAF_Acc_22" BEL
+        "MAF_Acc_23" BEL "RAM1_WE_0" BEL "ADC_Scan_En" BEL
+        "inst_fir_filter_0/blk00000003/blk00000006" BEL
+        "inst_fir_filter_0/blk00000003/blk00000007" BEL
+        "inst_fir_filter_0/blk00000003/blk00000008" PIN
+        "inst_fir_filter_0/blk00000003/blk00000009_pins<92>" BEL
+        "inst_fir_filter_0/blk00000003/blk00000012" BEL
+        "inst_fir_filter_0/blk00000003/blk00000013" BEL
+        "inst_fir_filter_0/blk00000003/blk00000014" BEL
+        "inst_fir_filter_0/blk00000003/blk00000015" BEL
+        "inst_fir_filter_0/blk00000003/blk00000017" BEL
+        "inst_fir_filter_0/blk00000003/blk00000018" BEL
+        "inst_fir_filter_0/blk00000003/blk00000019" BEL
+        "inst_fir_filter_0/blk00000003/blk0000001a" BEL
+        "inst_fir_filter_0/blk00000003/blk0000001b" BEL
+        "inst_fir_filter_0/blk00000003/blk0000001c" BEL
+        "inst_fir_filter_0/blk00000003/blk0000001d" BEL
+        "inst_fir_filter_0/blk00000003/blk0000001e" BEL
+        "inst_fir_filter_0/blk00000003/blk0000001f" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk00000049" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk0000004a" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk0000004b" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk0000004c" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk0000004d" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk0000004e" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk0000004f" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk00000050" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk00000051" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk00000052" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk00000053" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk00000054" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk00000055" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk00000056" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk00000057" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk00000058" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk00000059" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk0000005a" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk0000005b" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk0000005c" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk0000005d" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk0000005e" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk0000005f" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk00000060" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk00000061" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk00000062" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk00000063" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk00000064" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk00000065" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk00000066" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk00000067" BEL
+        "inst_fir_filter_0/blk00000003/blk00000047/blk00000068" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk0000006b" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk0000006c" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk0000006d" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk0000006e" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk0000006f" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk00000070" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk00000071" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk00000072" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk00000073" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk00000074" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk00000075" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk00000076" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk00000077" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk00000078" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk00000079" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk0000007a" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk0000007b" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk0000007c" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk0000007d" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk0000007e" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk0000007f" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk00000080" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk00000081" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk00000082" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk00000083" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk00000084" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk00000085" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk00000086" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk00000087" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk00000088" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk00000089" BEL
+        "inst_fir_filter_0/blk00000003/blk00000069/blk0000008a" BEL
+        "inst_fir_filter_0/blk00000003/blk0000008b/blk0000008c" BEL
+        "inst_fir_filter_0/blk00000003/blk0000008b/blk0000008d" BEL
+        "inst_fir_filter_0/blk00000003/blk0000008b/blk0000008e" BEL
+        "inst_fir_filter_0/blk00000003/blk0000008b/blk0000008f" BEL
+        "inst_fir_filter_0/blk00000003/blk0000008b/blk00000090" BEL
+        "inst_fir_filter_0/blk00000003/blk0000008b/blk00000091" BEL
+        "inst_fir_filter_0/blk00000003/blk0000008b/blk00000092" BEL
+        "inst_fir_filter_0/blk00000003/blk0000008b/blk00000093" BEL
+        "inst_fir_filter_0/blk00000003/blk0000008b/blk00000094" BEL
+        "inst_fir_filter_0/blk00000003/blk0000008b/blk00000095" BEL
+        "inst_fir_filter_0/blk00000003/blk0000008b/blk00000096" BEL
+        "inst_fir_filter_0/blk00000003/blk000000a1" BEL
+        "inst_fir_filter_0/blk00000003/blk000000a2" BEL
+        "inst_fir_filter_0/blk00000003/blk000000a3" BEL
+        "inst_fir_filter_0/blk00000003/blk000000a4" BEL
+        "inst_fir_filter_0/blk00000003/blk000000a5" BEL
+        "inst_fir_filter_0/blk00000003/blk000000a6" BEL
+        "inst_fir_filter_0/blk00000003/blk000000a7" BEL
+        "inst_fir_filter_0/blk00000003/blk000000a8" BEL
+        "inst_fir_filter_0/blk00000003/blk000000a9" BEL
+        "inst_fir_filter_0/blk00000003/blk000000aa" BEL
+        "inst_fir_filter_0/blk00000003/blk000000ab" BEL
+        "inst_fir_filter_0/blk00000003/blk000000ac" BEL
+        "inst_fir_filter_0/blk00000003/blk000000ad" BEL
+        "inst_fir_filter_0/blk00000003/blk000000ae" BEL
+        "inst_fir_filter_0/blk00000003/blk000000af" BEL
+        "inst_fir_filter_0/blk00000003/blk000000b0" BEL
+        "inst_fir_filter_0/blk00000003/blk000000b1" BEL
+        "inst_fir_filter_0/blk00000003/blk000000b2" BEL
+        "inst_fir_filter_0/blk00000003/blk000000b3" BEL
+        "inst_fir_filter_0/blk00000003/blk000000b4" BEL
+        "inst_fir_filter_0/blk00000003/blk000000b5" BEL
+        "inst_fir_filter_0/blk00000003/blk000000b6" BEL
+        "inst_fir_filter_0/blk00000003/blk000000b7" BEL
+        "inst_fir_filter_0/blk00000003/blk000000b8" BEL
+        "inst_fir_filter_0/blk00000003/blk000000b9" BEL
+        "inst_fir_filter_0/blk00000003/blk000000c0" BEL
+        "inst_fir_filter_0/blk00000003/blk000000ec" BEL
+        "inst_fir_filter_0/blk00000003/blk000000ed" BEL
+        "inst_fir_filter_0/blk00000003/blk000000ee" BEL
+        "inst_fir_filter_0/blk00000003/blk000000ef" BEL
+        "inst_fir_filter_0/blk00000003/blk000000f0" BEL
+        "inst_fir_filter_0/blk00000003/blk000000f1" BEL
+        "inst_fir_filter_0/blk00000003/blk000000f2" BEL
+        "inst_fir_filter_0/blk00000003/blk000000f3" BEL
+        "inst_fir_filter_0/blk00000003/blk000000f4" BEL
+        "inst_fir_filter_0/blk00000003/blk000000f5" BEL
+        "inst_fir_filter_0/blk00000003/blk000000f6" BEL
+        "inst_fir_filter_0/blk00000003/blk000000f7" BEL
+        "inst_fir_filter_0/blk00000003/blk000000f8" BEL
+        "inst_fir_filter_0/blk00000003/blk000000f9" BEL
+        "inst_fir_filter_0/blk00000003/blk000000fa" BEL
+        "inst_fir_filter_0/blk00000003/blk000000fb" BEL
+        "inst_fir_filter_0/blk00000003/blk000000fc" BEL
+        "inst_fir_filter_0/blk00000003/blk000000fd" BEL
+        "inst_fir_filter_0/blk00000003/blk000000fe" BEL
+        "inst_fir_filter_0/blk00000003/blk00000107" BEL
+        "inst_fir_filter_0/blk00000003/blk00000108" BEL
+        "inst_fir_filter_0/blk00000003/blk00000109" BEL
+        "inst_fir_filter_0/blk00000003/blk0000010a" BEL
+        "inst_fir_filter_0/blk00000003/blk0000010b" BEL
+        "inst_fir_filter_0/blk00000003/blk0000010c" BEL
+        "inst_fir_filter_0/blk00000003/blk0000010d" BEL
+        "inst_fir_filter_0/blk00000003/blk0000010e" BEL
+        "inst_fir_filter_0/blk00000003/blk0000010f" BEL
+        "inst_fir_filter_0/blk00000003/blk00000110" BEL
+        "inst_fir_filter_0/blk00000003/blk00000111" BEL
+        "inst_fir_filter_0/blk00000003/blk00000112" BEL
+        "inst_fir_filter_0/blk00000003/blk00000113" BEL
+        "inst_fir_filter_0/blk00000003/blk00000114" BEL
+        "inst_fir_filter_0/blk00000003/blk00000115" BEL
+        "inst_fir_filter_0/blk00000003/blk00000116" BEL
+        "inst_fir_filter_0/blk00000003/blk00000117" BEL
+        "inst_fir_filter_0/blk00000003/blk00000118" BEL
+        "inst_fir_filter_0/blk00000003/blk00000119" BEL
+        "inst_fir_filter_0/blk00000003/blk0000011a" BEL
+        "inst_fir_filter_0/blk00000003/blk0000011b" BEL
+        "inst_fir_filter_0/blk00000003/blk0000011c" BEL
+        "inst_fir_filter_0/blk00000003/blk0000011d" BEL
+        "inst_fir_filter_0/blk00000003/blk0000011e" BEL
+        "inst_fir_filter_0/blk00000003/blk0000011f" BEL
+        "inst_fir_filter_0/blk00000003/blk00000120" BEL
+        "inst_fir_filter_0/blk00000003/blk00000121" BEL
+        "inst_fir_filter_0/blk00000003/blk00000122" BEL
+        "inst_fir_filter_0/blk00000003/blk00000123" BEL
+        "inst_fir_filter_0/blk00000003/blk00000124" BEL
+        "inst_fir_filter_0/blk00000003/blk00000125" BEL
+        "inst_fir_filter_0/blk00000003/blk00000126" BEL
+        "inst_fir_filter_0/blk00000003/blk00000127" BEL
+        "inst_fir_filter_0/blk00000003/blk00000128" BEL
+        "inst_fir_filter_0/blk00000003/blk00000129" BEL
+        "inst_fir_filter_0/blk00000003/blk0000012a" BEL
+        "inst_fir_filter_0/blk00000003/blk0000012b" BEL
+        "inst_fir_filter_0/blk00000003/blk0000012c" BEL
+        "inst_fir_filter_0/blk00000003/blk0000012d" BEL
+        "inst_fir_filter_0/blk00000003/blk0000012e" BEL
+        "inst_fir_filter_0/blk00000003/blk0000012f" PIN
+        "inst_RAM_block1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram_pins<28>"
+        PIN
+        "inst_RAM_block1/U0/xst_blk_mem_generator/gnativebmg.native_blk_mem_gen/valid.cstr/ramloop[0].ram.r/s6_noinit.ram/SDP.SIMPLE_PRIM18.ram_pins<29>"
+        BEL "inst_Pre_DCM/clkout1_buf" PIN
+        "SP6_INS_BUFIO2FB_DCM_ML_BUFIO2FB_1_pins<1>" PIN
+        "inst_Pre_DCM/dcm_sp_inst_pins<1>";
+PIN SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0> = BEL "SP6_BUFIO_INSERT_ML_BUFIO2_0"
+        PINNAME DIVCLK;
+PIN inst_Pre_DCM/dcm_sp_inst_pins<2> = BEL "inst_Pre_DCM/dcm_sp_inst" PINNAME
+        CLKIN;
+TIMEGRP osc_clk_pin = PIN "SP6_BUFIO_INSERT_ML_BUFIO2_0_pins<0>" PIN
+        "inst_Pre_DCM/dcm_sp_inst_pins<2>";
+TS_osc_clk_pin = PERIOD TIMEGRP "osc_clk_pin" 50 MHz HIGH 50% INPUT_JITTER 0.2
+        ns;
+TS_inst_Pre_DCM_clk0 = PERIOD TIMEGRP "inst_Pre_DCM_clk0" TS_osc_clk_pin HIGH
+        50% INPUT_JITTER 0.2 ns;
+SCHEMATIC END;
+

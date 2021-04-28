@@ -1,0 +1,23 @@
+# Output products list for <Fir_filter>
+Fir_filter.asy
+Fir_filter.gise
+Fir_filter.mif
+Fir_filter.ngc
+Fir_filter.sym
+Fir_filter.vhd
+Fir_filter.vho
+Fir_filter.xco
+Fir_filter.xise
+Fir_filterCOEFF_auto0_0.mif
+Fir_filterCOEFF_auto0_1.mif
+Fir_filterCOEFF_auto0_2.mif
+Fir_filterCOEFF_auto0_3.mif
+Fir_filterCOEFF_auto0_4.mif
+Fir_filterCOEFF_auto0_5.mif
+Fir_filterCOEFF_auto0_6.mif
+Fir_filterCOEFF_auto0_7.mif
+Fir_filter_flist.txt
+Fir_filter_readme.txt
+Fir_filter_xmdf.tcl
+Fir_filterfilt_decode_rom.mif
+_xmsgs\pn_parser.xmsgs

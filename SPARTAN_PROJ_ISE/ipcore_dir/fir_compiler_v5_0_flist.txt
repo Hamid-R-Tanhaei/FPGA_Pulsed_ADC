@@ -1,0 +1,19 @@
+# Output products list for <fir_compiler_v5_0>
+_xmsgs\pn_parser.xmsgs
+fir_compiler_v5_0.asy
+fir_compiler_v5_0.gise
+fir_compiler_v5_0.mif
+fir_compiler_v5_0.ngc
+fir_compiler_v5_0.sym
+fir_compiler_v5_0.vhd
+fir_compiler_v5_0.vho
+fir_compiler_v5_0.xco
+fir_compiler_v5_0.xise
+fir_compiler_v5_0COEFF_auto0_0.mif
+fir_compiler_v5_0COEFF_auto0_1.mif
+fir_compiler_v5_0COEFF_auto0_2.mif
+fir_compiler_v5_0COEFF_auto0_3.mif
+fir_compiler_v5_0_flist.txt
+fir_compiler_v5_0_readme.txt
+fir_compiler_v5_0_xmdf.tcl
+fir_compiler_v5_0filt_decode_rom.mif

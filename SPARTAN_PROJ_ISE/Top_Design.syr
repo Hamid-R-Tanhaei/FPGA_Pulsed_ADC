@@ -1,0 +1,507 @@
+Release 14.7 - xst P.20131013 (nt64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.33 secs
+ 
+--> Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.33 secs
+ 
+--> Reading design: Top_Design.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Parsing
+  3) HDL Elaboration
+  4) HDL Synthesis
+       4.1) HDL Synthesis Report
+  5) Advanced HDL Synthesis
+       5.1) Advanced HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Partition Report
+  8) Design Summary
+       8.1) Primitive and Black Box Usage
+       8.2) Device utilization summary
+       8.3) Partition Resource Summary
+       8.4) Timing Report
+            8.4.1) Clock Information
+            8.4.2) Asynchronous Control Signals Information
+            8.4.3) Timing Summary
+            8.4.4) Timing Details
+            8.4.5) Cross Clock Domains Report
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "Top_Design.prj"
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "Top_Design"
+Output Format                      : NGC
+Target Device                      : xc6slx9-2-tqg144
+
+---- Source Options
+Top Module Name                    : Top_Design
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Shift Register Extraction          : YES
+ROM Style                          : Auto
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Shift Register Minimum Size        : 2
+Use DSP Block                      : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+LUT Combining                      : Auto
+Reduce Control Sets                : Auto
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Auto
+Use Synchronous Set                : Auto
+Use Synchronous Reset              : Auto
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Power Reduction                    : NO
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+DSP48 Utilization Ratio            : 100
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+Cores Search Directories           : {"ipcore_dir"  }
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Parsing                                  *
+=========================================================================
+Parsing VHDL file "D:\GitHub\FPGA_Pulsed_ADC\SPARTAN_PROJ_ISE\ipcore_dir\DCM_Pre.vhd" into library work
+Parsing entity <DCM_Pre>.
+Parsing architecture <xilinx> of entity <dcm_pre>.
+Parsing VHDL file "D:\GitHub\FPGA_Pulsed_ADC\SPARTAN_PROJ_ISE\ipcore_dir\RAM_Block.vhd" into library work
+Parsing entity <RAM_Block>.
+Parsing architecture <RAM_Block_a> of entity <ram_block>.
+Parsing VHDL file "D:\GitHub\FPGA_Pulsed_ADC\SPARTAN_PROJ_ISE\ipcore_dir\FIR_0.vhd" into library work
+Parsing entity <FIR_0>.
+Parsing architecture <FIR_0_a> of entity <fir_0>.
+Parsing VHDL file "D:\GitHub\FPGA_Pulsed_ADC\SPARTAN_PROJ_ISE\Top_Design.vhd" into library work
+Parsing entity <Top_Design>.
+Parsing architecture <Behavioral> of entity <top_design>.
+
+=========================================================================
+*                            HDL Elaboration                            *
+=========================================================================
+
+Elaborating entity <Top_Design> (architecture <Behavioral>) from library <work>.
+
+Elaborating entity <DCM_Pre> (architecture <xilinx>) from library <work>.
+
+Elaborating entity <FIR_0> (architecture <FIR_0_a>) from library <work>.
+
+Elaborating entity <RAM_Block> (architecture <RAM_Block_a>) from library <work>.
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <Top_Design>.
+    Related source file is "D:\GitHub\FPGA_Pulsed_ADC\SPARTAN_PROJ_ISE\Top_Design.vhd".
+INFO:Xst:3210 - "D:\GitHub\FPGA_Pulsed_ADC\SPARTAN_PROJ_ISE\Top_Design.vhd" line 174: Output port <CLK_OUT_100M> of the instance <inst_Pre_DCM> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\GitHub\FPGA_Pulsed_ADC\SPARTAN_PROJ_ISE\Top_Design.vhd" line 174: Output port <CLK_OUT_5M> of the instance <inst_Pre_DCM> is unconnected or connected to loadless signal.
+INFO:Xst:3210 - "D:\GitHub\FPGA_Pulsed_ADC\SPARTAN_PROJ_ISE\Top_Design.vhd" line 174: Output port <CLK_VALID> of the instance <inst_Pre_DCM> is unconnected or connected to loadless signal.
+    Found 19-bit register for signal <Timer_cntr>.
+    Found 23-bit register for signal <MAF_Back>.
+    Found 24-bit register for signal <MAF_Acc>.
+    Found 17-bit register for signal <In_sig_integral>.
+    Found 1-bit register for signal <ADC_Scan_En>.
+    Found 10-bit register for signal <sample_cntr>.
+    Found 1-bit register for signal <Input_signal_regd>.
+    Found 16-bit register for signal <FIR0_din>.
+    Found 13-bit register for signal <back_value_inst>.
+    Found 13-bit register for signal <back_step>.
+    Found 10-bit register for signal <RAM1_WData>.
+    Found 10-bit register for signal <RAM1_WAddr>.
+    Found 1-bit register for signal <esp_rdy_cur>.
+    Found 1-bit register for signal <esp_rdy_pre>.
+    Found 1-bit register for signal <esp_clk_cur>.
+    Found 1-bit register for signal <esp_clk_pre>.
+    Found 10-bit register for signal <RAM1_RAddr>.
+    Found 8-bit register for signal <ESP_Data_out>.
+    Found 1-bit register for signal <RAM1_WE>.
+    Found 19-bit adder for signal <Timer_cntr[18]_GND_4_o_add_1_OUT> created at line 1241.
+    Found 17-bit adder for signal <In_sig_integral[16]_GND_4_o_add_7_OUT> created at line 1253.
+    Found 24-bit adder for signal <MAF_Acc[23]_In_sig_integral[16]_add_10_OUT> created at line 133.
+    Found 10-bit adder for signal <sample_cntr[9]_GND_4_o_add_13_OUT> created at line 1241.
+    Found 10-bit adder for signal <RAM1_RAddr[9]_GND_4_o_add_33_OUT> created at line 1241.
+    Found 17-bit subtractor for signal <In_sig_integral[16]_GND_4_o_sub_9_OUT<16:0>> created at line 1320.
+    Found 23-bit subtractor for signal <MAF_Back[22]_In_sig_integral[16]_sub_12_OUT<22:0>> created at line 135.
+    Found 13x11-bit multiplier for signal <back_step[12]_GND_4_o_MuLt_12_OUT> created at line 140.
+    Summary:
+	inferred   1 Multiplier(s).
+	inferred   6 Adder/Subtractor(s).
+	inferred 180 D-type flip-flop(s).
+	inferred   3 Multiplexer(s).
+Unit <Top_Design> synthesized.
+
+Synthesizing Unit <DCM_Pre>.
+    Related source file is "D:\GitHub\FPGA_Pulsed_ADC\SPARTAN_PROJ_ISE\ipcore_dir\DCM_Pre.vhd".
+    Summary:
+	no macro.
+Unit <DCM_Pre> synthesized.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 1
+ 13x11-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 6
+ 10-bit adder                                          : 2
+ 17-bit addsub                                         : 1
+ 19-bit adder                                          : 1
+ 23-bit subtractor                                     : 1
+ 24-bit adder                                          : 1
+# Registers                                            : 19
+ 1-bit register                                        : 7
+ 10-bit register                                       : 4
+ 13-bit register                                       : 2
+ 16-bit register                                       : 1
+ 17-bit register                                       : 1
+ 19-bit register                                       : 1
+ 23-bit register                                       : 1
+ 24-bit register                                       : 1
+ 8-bit register                                        : 1
+# Multiplexers                                         : 3
+ 10-bit 2-to-1 multiplexer                             : 2
+ 24-bit 2-to-1 multiplexer                             : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Reading core <ipcore_dir/FIR_0.ngc>.
+Reading core <ipcore_dir/RAM_Block.ngc>.
+Loading core <FIR_0> for timing and area information for instance <inst_fir_filter_0>.
+Loading core <RAM_Block> for timing and area information for instance <inst_RAM_block1>.
+
+Synthesizing (advanced) Unit <Top_Design>.
+The following registers are absorbed into accumulator <MAF_Back>: 1 register on signal <MAF_Back>.
+The following registers are absorbed into accumulator <MAF_Acc>: 1 register on signal <MAF_Acc>.
+The following registers are absorbed into counter <In_sig_integral>: 1 register on signal <In_sig_integral>.
+The following registers are absorbed into counter <Timer_cntr>: 1 register on signal <Timer_cntr>.
+The following registers are absorbed into counter <RAM1_RAddr>: 1 register on signal <RAM1_RAddr>.
+Unit <Top_Design> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# Multipliers                                          : 1
+ 13x11-bit multiplier                                  : 1
+# Adders/Subtractors                                   : 1
+ 10-bit adder                                          : 1
+# Counters                                             : 3
+ 10-bit up counter                                     : 1
+ 17-bit updown counter                                 : 1
+ 19-bit up counter                                     : 1
+# Accumulators                                         : 2
+ 23-bit down accumulator                               : 1
+ 24-bit up loadable accumulator                        : 1
+# Registers                                            : 87
+ Flip-Flops                                            : 87
+# Multiplexers                                         : 2
+ 10-bit 2-to-1 multiplexer                             : 2
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+
+Optimizing unit <Top_Design> ...
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block Top_Design, actual ratio is 4.
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 167
+ Flip-Flops                                            : 167
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Design Summary                             *
+=========================================================================
+
+Top Level Output File Name         : Top_Design.ngc
+
+Primitive and Black Box Usage:
+------------------------------
+# BELS                             : 441
+#      GND                         : 5
+#      INV                         : 4
+#      LUT1                        : 33
+#      LUT2                        : 84
+#      LUT3                        : 38
+#      LUT4                        : 29
+#      LUT5                        : 5
+#      LUT6                        : 12
+#      MUXCY                       : 93
+#      MUXCY_D                     : 7
+#      MUXCY_L                     : 14
+#      VCC                         : 3
+#      XORCY                       : 114
+# FlipFlops/Latches                : 300
+#      FD                          : 62
+#      FDE                         : 121
+#      FDRE                        : 115
+#      FDSE                        : 2
+# RAMS                             : 1
+#      RAMB16BWER                  : 1
+# Shift Registers                  : 52
+#      SRLC16E                     : 52
+# Clock Buffers                    : 3
+#      BUFG                        : 3
+# IO Buffers                       : 12
+#      IBUF                        : 3
+#      IBUFG                       : 1
+#      OBUF                        : 8
+# DCMs                             : 1
+#      DCM_SP                      : 1
+# DSPs                             : 2
+#      DSP48A1                     : 2
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 6slx9tqg144-2 
+
+
+Slice Logic Utilization: 
+ Number of Slice Registers:             300  out of  11440     2%  
+ Number of Slice LUTs:                  257  out of   5720     4%  
+    Number used as Logic:               205  out of   5720     3%  
+    Number used as Memory:               52  out of   1440     3%  
+       Number used as SRL:               52
+
+Slice Logic Distribution: 
+ Number of LUT Flip Flop pairs used:    342
+   Number with an unused Flip Flop:      42  out of    342    12%  
+   Number with an unused LUT:            85  out of    342    24%  
+   Number of fully used LUT-FF pairs:   215  out of    342    62%  
+   Number of unique control sets:        16
+
+IO Utilization: 
+ Number of IOs:                          12
+ Number of bonded IOBs:                  12  out of    102    11%  
+
+Specific Feature Utilization:
+ Number of Block RAM/FIFO:                1  out of     32     3%  
+    Number using Block RAM only:          1
+ Number of BUFG/BUFGCTRLs:                3  out of     16    18%  
+ Number of DSP48A1s:                      2  out of     16    12%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+Timing Report
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CLK_IN                             | DCM_SP:CLK0            | 355   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -2
+
+   Minimum period: 6.314ns (Maximum Frequency: 158.391MHz)
+   Minimum input arrival time before clock: 2.083ns
+   Maximum output required time after clock: 4.118ns
+   Maximum combinational path delay: No path found
+
+Timing Details:
+---------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'CLK_IN'
+  Clock period: 6.314ns (frequency: 158.391MHz)
+  Total number of paths / destination ports: 6048 / 845
+-------------------------------------------------------------------------
+Delay:               6.314ns (Levels of Logic = 25)
+  Source:            Mmult_back_step[12]_GND_4_o_MuLt_12_OUT (DSP)
+  Destination:       MAF_Acc_23 (FF)
+  Source Clock:      CLK_IN rising
+  Destination Clock: CLK_IN rising
+
+  Data Path: Mmult_back_step[12]_GND_4_o_MuLt_12_OUT to MAF_Acc_23
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     DSP48A1:CLK->M0       1   4.371   0.682  Mmult_back_step[12]_GND_4_o_MuLt_12_OUT (back_step[12]_GND_4_o_MuLt_12_OUT<0>)
+     LUT4:I3->O            1   0.254   0.000  Maccum_MAF_Acc_lut<0> (Maccum_MAF_Acc_lut<0>)
+     MUXCY:S->O            1   0.215   0.000  Maccum_MAF_Acc_cy<0> (Maccum_MAF_Acc_cy<0>)
+     MUXCY:CI->O           1   0.023   0.000  Maccum_MAF_Acc_cy<1> (Maccum_MAF_Acc_cy<1>)
+     MUXCY:CI->O           1   0.023   0.000  Maccum_MAF_Acc_cy<2> (Maccum_MAF_Acc_cy<2>)
+     MUXCY:CI->O           1   0.023   0.000  Maccum_MAF_Acc_cy<3> (Maccum_MAF_Acc_cy<3>)
+     MUXCY:CI->O           1   0.023   0.000  Maccum_MAF_Acc_cy<4> (Maccum_MAF_Acc_cy<4>)
+     MUXCY:CI->O           1   0.023   0.000  Maccum_MAF_Acc_cy<5> (Maccum_MAF_Acc_cy<5>)
+     MUXCY:CI->O           1   0.023   0.000  Maccum_MAF_Acc_cy<6> (Maccum_MAF_Acc_cy<6>)
+     MUXCY:CI->O           1   0.023   0.000  Maccum_MAF_Acc_cy<7> (Maccum_MAF_Acc_cy<7>)
+     MUXCY:CI->O           1   0.023   0.000  Maccum_MAF_Acc_cy<8> (Maccum_MAF_Acc_cy<8>)
+     MUXCY:CI->O           1   0.023   0.000  Maccum_MAF_Acc_cy<9> (Maccum_MAF_Acc_cy<9>)
+     MUXCY:CI->O           1   0.023   0.000  Maccum_MAF_Acc_cy<10> (Maccum_MAF_Acc_cy<10>)
+     MUXCY:CI->O           1   0.023   0.000  Maccum_MAF_Acc_cy<11> (Maccum_MAF_Acc_cy<11>)
+     MUXCY:CI->O           1   0.023   0.000  Maccum_MAF_Acc_cy<12> (Maccum_MAF_Acc_cy<12>)
+     MUXCY:CI->O           1   0.023   0.000  Maccum_MAF_Acc_cy<13> (Maccum_MAF_Acc_cy<13>)
+     MUXCY:CI->O           1   0.023   0.000  Maccum_MAF_Acc_cy<14> (Maccum_MAF_Acc_cy<14>)
+     MUXCY:CI->O           1   0.023   0.000  Maccum_MAF_Acc_cy<15> (Maccum_MAF_Acc_cy<15>)
+     MUXCY:CI->O           1   0.023   0.000  Maccum_MAF_Acc_cy<16> (Maccum_MAF_Acc_cy<16>)
+     MUXCY:CI->O           1   0.023   0.000  Maccum_MAF_Acc_cy<17> (Maccum_MAF_Acc_cy<17>)
+     MUXCY:CI->O           1   0.023   0.000  Maccum_MAF_Acc_cy<18> (Maccum_MAF_Acc_cy<18>)
+     MUXCY:CI->O           1   0.023   0.000  Maccum_MAF_Acc_cy<19> (Maccum_MAF_Acc_cy<19>)
+     MUXCY:CI->O           1   0.023   0.000  Maccum_MAF_Acc_cy<20> (Maccum_MAF_Acc_cy<20>)
+     MUXCY:CI->O           1   0.023   0.000  Maccum_MAF_Acc_cy<21> (Maccum_MAF_Acc_cy<21>)
+     MUXCY:CI->O           0   0.023   0.000  Maccum_MAF_Acc_cy<22> (Maccum_MAF_Acc_cy<22>)
+     XORCY:CI->O           1   0.206   0.000  Maccum_MAF_Acc_xor<23> (Result<23>)
+     FDRE:D                    0.074          MAF_Acc_23
+    ----------------------------------------
+    Total                      6.314ns (5.632ns logic, 0.682ns route)
+                                       (89.2% logic, 10.8% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CLK_IN'
+  Total number of paths / destination ports: 3 / 3
+-------------------------------------------------------------------------
+Offset:              2.083ns (Levels of Logic = 1)
+  Source:            ESP32_Ready (PAD)
+  Destination:       esp_rdy_cur (FF)
+  Destination Clock: CLK_IN rising
+
+  Data Path: ESP32_Ready to esp_rdy_cur
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   1.328   0.681  ESP32_Ready_IBUF (ESP32_Ready_IBUF)
+     FD:D                      0.074          esp_rdy_cur
+    ----------------------------------------
+    Total                      2.083ns (1.402ns logic, 0.681ns route)
+                                       (67.3% logic, 32.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CLK_IN'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              4.118ns (Levels of Logic = 1)
+  Source:            ESP_Data_out_7 (FF)
+  Destination:       ESP32_Data<7> (PAD)
+  Source Clock:      CLK_IN rising
+
+  Data Path: ESP_Data_out_7 to ESP32_Data<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.525   0.681  ESP_Data_out_7 (ESP_Data_out_7)
+     OBUF:I->O                 2.912          ESP32_Data_7_OBUF (ESP32_Data<7>)
+    ----------------------------------------
+    Total                      4.118ns (3.437ns logic, 0.681ns route)
+                                       (83.5% logic, 16.5% route)
+
+=========================================================================
+
+Cross Clock Domains Report:
+--------------------------
+
+Clock to Setup on destination clock CLK_IN
+---------------+---------+---------+---------+---------+
+               | Src:Rise| Src:Fall| Src:Rise| Src:Fall|
+Source Clock   |Dest:Rise|Dest:Rise|Dest:Fall|Dest:Fall|
+---------------+---------+---------+---------+---------+
+CLK_IN         |    6.314|         |         |         |
+---------------+---------+---------+---------+---------+
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 21.00 secs
+Total CPU time to Xst completion: 21.70 secs
+ 
+--> 
+
+Total memory usage is 4603536 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :    0 (   0 filtered)
+Number of infos    :    3 (   0 filtered)
+

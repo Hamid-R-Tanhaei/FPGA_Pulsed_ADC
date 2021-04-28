@@ -1,0 +1,4 @@
+vhdl work "ipcore_dir/DCM_Pre.vhd"
+vhdl work "ipcore_dir/RAM_Block.vhd"
+vhdl work "ipcore_dir/FIR_0.vhd"
+vhdl work "Top_Design.vhd"
